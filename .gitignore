@@ -1,0 +1,6 @@
+# folders
+radarays/catkin_ws/build/
+radarays/catkin_ws/devel/
+
+# files
+radarays/catkin_ws/.catkin_workspace
