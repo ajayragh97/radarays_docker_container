@@ -1,0 +1,21 @@
+services:
+
+  noetic_core:
+    container_name: radarays_container
+    image: ubuntu:radarays
+    privileged: true
+    networks:
+      - ros_network
+    tty: true
+    environment:
+      - ROS_DOMAIN_ID=1
+      - DISPLAY=unix${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - ./radarays/catkin_ws:/root/catkin_ws/:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+
+networks:
+  ros_network:
+    driver: bridge
