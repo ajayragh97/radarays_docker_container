@@ -5,6 +5,7 @@ This container includes the following ros packages:
 > 2. Mesh Tools package: https://github.com/amock/mesh_tools
 > 3. RadaRays Gazebo plugin: https://github.com/uos/radarays_gazebo_plugins
 > 4. Rmagine Gazebo plugin: https://github.com/uos/rmagine_gazebo_plugins/tree/noetic
+> 5. mulran2bag package: https://github.com/amock/mulran2bag.git
 
 ## Container information
 + Ubuntu 20.04
