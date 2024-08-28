@@ -92,5 +92,6 @@ RUN cd /root/ \
 RUN apt install -y opencl-clhpp-headers \
     && apt install -y ocl-icd-opencl-dev \
     && apt-get install -y ros-noetic-lvr2 \
-    && apt-get install -y opencl-headers
+    && apt-get install -y opencl-headers \
+    && apt-get install ros-noetic-imu-tools
 

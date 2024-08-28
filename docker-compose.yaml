@@ -4,6 +4,13 @@ services:
     container_name: radarays_container
     image: ubuntu:radarays
     privileged: true
+    deploy: 
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+
     networks:
       - ros_network
     tty: true
@@ -11,10 +18,20 @@ services:
       - ROS_DOMAIN_ID=1
       - DISPLAY=unix${DISPLAY}
       - QT_X11_NO_MITSHM=1
+      - NVIDIA_VISIBLE_DEVICES=all 
+
     volumes:
       - ./radarays/catkin_ws:/root/catkin_ws/:rw
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+      - /etc/OpenCL/vendors:/etc/OpenCL/vendors:rw
+      - /usr/local/cuda/lib64:/usr/local/cuda/lib64
+      - ../dataset:/root/dataset:rw
+    
+    devices:
+      - /dev/nvidia0:/dev/nvidia0 
+      - /dev/nvidiactl:/dev/nvidiactl
+      - /dev/nvidia-uvm:/dev/nvidia-uvm
 
 networks:
   ros_network:

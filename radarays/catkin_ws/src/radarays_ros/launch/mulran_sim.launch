@@ -4,8 +4,8 @@
 <arg name="rate" default="1.0" />
 <arg name="gui" default="true" />
 
-<arg name="meshfile" default="/home/amock/datasets/mulran_meshes/lvr2/KAIST/kaist02_mesh_red05_cleaned.ply" />
-<arg name="bagfile" default="/home/amock/datasets/micp_mulran/KAIST/mulran_kaist01_micp_lvr2.bag" />
+<arg name="meshfile" default="/root/dataset/mesh/KAIST02/kaist02_mesh_v6M_f11M.ply" />
+<arg name="bagfile" default="/root/dataset/bags/KAIST02_loc_2024-08-28-13-43-10.bag" />
 <!-- <arg name="bagfile" default="/home/amock/datasets/micp_mulran/KAIST/mulran_kaist02_micp_lvr2.bag" /> -->
 <!-- <arg name="bagfile" default="/home/amock/datasets/micp_mulran/KAIST/mulran_kaist03_micp_lvr2.bag" /> -->
 
@@ -33,7 +33,7 @@
     args="load /radar_simulator $(arg radarparams)" />
 
 <group if="$(arg gui)">
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find radarays_ros)/rviz/mulran.rviz">
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find radarays_ros)/rviz/mulran_1.rviz">
         <rosparam param="rviz_map_plugin" subst_value="True">
             Map3D: $(arg meshfile)
         </rosparam>
